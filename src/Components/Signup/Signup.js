@@ -89,7 +89,9 @@ const {firebase}=useContext(FirebaseContext);
           />
           <br />
           <br />
-          <button  >Signup</button>
+          <button onClick={()=>{
+history.push('/')
+          }} >Signup</button>
         </form>
         <a>Login</a>
       </div>
