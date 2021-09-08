@@ -9,6 +9,7 @@ import { useEffect } from 'react';
 import { useContext } from 'react';
 import { AuthContext, FirebaseContext } from './store/FirebaseContext';
 import onAuthStateChanged from "firebase/auth";
+import Post from './store/PostContext';
 /**
  * ?  =====Import Components=====
  */
@@ -25,6 +26,7 @@ firebase.auth().onAuthStateChanged((user)=>{
   })
   return (
     <div>
+      <Post>
       <Router>
         <Route exact path="/" > <Home />   </Route>
         <Route path="/signup" > <Signup/> </Route>
@@ -33,6 +35,8 @@ firebase.auth().onAuthStateChanged((user)=>{
         <Route path="/view" ><ViewPost/> </Route>
       </Router>
 
+      </Post>
+      
     </div>
   );
 }
